@@ -1,9 +1,11 @@
-version: "3.9"
-
 services:
-  ncert-rag:
-    build: .
-    container_name: ncert-rag
+
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile.api
+
+    container_name: rag-api
 
     ports:
       - "8000:8000"
@@ -12,3 +14,23 @@ services:
       - .env
 
     restart: unless-stopped
+
+  streamlit:
+    build:
+      context: .
+      dockerfile: Dockerfile.streamlit
+
+    container_name: rag-streamlit
+
+    ports:
+      - "8501:8501"
+
+    depends_on:
+      - api
+
+    env_file:
+      - .env
+
+    restart: unless-stopped
+
+    
