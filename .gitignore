@@ -15,7 +15,7 @@ __pycache__/
 data/vectordb/
 
 # Generated Data
-data/chunks/
+# data/chunks/
 data/cleaned/
 
 # Logs
