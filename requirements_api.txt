@@ -24,3 +24,4 @@ requests
 joblib
 httpx
 python-multipart
+pytest
