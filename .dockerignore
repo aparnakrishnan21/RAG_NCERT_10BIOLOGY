@@ -1,11 +1,49 @@
+# Virtual environments
 .venv/
+venv/
+
+# Python
 __pycache__/
 *.pyc
+.pytest_cache/
+
+# Git
 .git/
 .gitignore
+.github/
+
+# IDE
 .vscode/
 .idea/
 
+# Environment
+.env
+
+# Logs
 *.log
 
-.env
+# Documentation
+docs/
+*.md
+
+# Tests
+tests/
+
+# Notebooks
+*.ipynb
+
+# Raw datasets
+data/raw/
+
+# Temporary outputs
+data/embeddings/
+data/cleaned/
+
+# Models
+models/
+
+# MLflow
+mlruns/
+
+# DVC cache
+.dvc/cache/
