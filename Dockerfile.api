@@ -5,9 +5,14 @@ ENV PYTHONUNBUFFERED=1
 
 WORKDIR /app
 
-COPY requirements.txt .
+COPY requirements_api.txt .
 
-RUN pip install --no-cache-dir -r requirements.txt
+# Install CPU-only PyTorch
+RUN pip install --no-cache-dir \
+    torch --index-url https://download.pytorch.org/whl/cpu
+
+# Install the remaining dependencies
+RUN pip install --no-cache-dir -r requirements_api.txt
 
 COPY . .
 
